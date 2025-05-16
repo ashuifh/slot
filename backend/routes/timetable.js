@@ -11,6 +11,7 @@ const router = express.Router();
 // GET /api/timetable
 router.get('/', (req, res) => {
   const timetablePath = path.join(__dirname, '../timetable.json');
+  console.log("Timetabledata",timetablePath)
   fs.readFile(timetablePath, 'utf-8', (err, data) => {
     if (err) {
       return res.status(500).json({ message: 'Could not read timetable data' });
